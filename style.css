@@ -1,7 +1,40 @@
 @import "tailwindcss";
 
-
 .oswald-font {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-12px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.feature-tag,
+.feature-tag-mobile {
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-tag {
+  transform: translateX(40px);
+}
+
+.feature-tag-mobile {
+  transform: translateY(30px);
+}
+
+.in-view .feature-tag,
+.in-view .feature-tag-mobile {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
 }
